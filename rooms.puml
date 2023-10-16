@@ -1,0 +1,241 @@
+@startuml
+
+digraph HouseOfDeath {
+    layout = dot
+    splines = ortho
+    node [shape = box]
+
+
+    room_1 [label = "1: Outside building"]
+    room_2 [label = "2: Dark forest"]
+    room_3 [label = "3: Dark forest"]
+    room_4 [label = "4: Dark forest"]
+
+    room_6 [label = "6: Inside"]
+    room_7 [label = "7: Make-up"]
+    room_8 [label = "8: Props"]
+    room_9 [label = "9: Costumes"]
+
+    room_11 [label = "11: Corridor N, E. Rooms S, W"]
+    room_12 [label = "12: Corridor N, S. Door W"]
+    room_13 [label = "13: Corridor  E, S. Door N"]
+    room_14 [label = "14: Corridor  E, W."]
+    room_15 [label = "15: Corridor  W, S. Door E"]
+    room_16 [label = "16: Kitchen"]
+    room_17 [label = "17: Corridor  N, S. 'Devel. Room' E"]
+    room_18 [label = "18: Dark room"]
+    room_19 [label = "19: Corridor  N, W. Door E"]
+    room_20 [label = "20: North ballroom set"]
+    room_21 [label = "21: Centre ballroom set"]
+    room_22 [label = "22: South ballroom set"]
+    room_23 [label = "23: Set dirty water tank"]
+    room_24 [label = "24: In tank"]
+    room_25 [label = "25: Stairs halfway"]
+    room_26 [label = "26: Backyard"]
+    room_27 [label = "27: Shed"]
+    room_28 [label = "28: Landing above stairs"]
+    room_29 [label = "29: Corridor  N, W"]
+    room_30 [label = "30: Corridor  N, S, E."]
+    room_31 [label = "31: Corridor  N, W. Room W"]
+    room_32 [label = "32: Dusty bedroom"]
+    room_33 [label = "33: Keep-fit"]
+    room_34 [label = "34: Corridor  E, S."]
+    room_35 [label = "35: Corridor  N, E. Stairs U"]
+    room_36 [label = "36: Old bed room"]
+    room_37 [label = "37: Above stairway\nsouthside attic"]
+    room_38 [label = "38: Northside attic"]
+    room_39 [label = "39: Odd room 1"]
+    room_40 [label = "40: odd room 2"]
+    room_41 [label = "41: Outside, ledge to east"]
+    room_42 [label = "42: Odd room 3"]
+    room_43 [label = "43: Odd room 4"]
+    room_44 [label = "44: Small room. Glassless window"]
+    room_45 [label = "45: Room without exits"]
+    room_46 [label = "46: Outside large door"]
+    room_47 [label = "47: High walled room"]
+    room_48 [label = "48: Odd room with bandages"]
+    room_49 [label = "49: Small room"]
+    room_50 [label = "50: Crypt"]
+    room_51 [label = "51: Passage E, W."]
+    room_52 [label = "52: Alley E, W."]
+    room_53 [label = "53: Large hairy room. Chute"]
+    room_54 [label = "54: Large room without exits"]
+    room_55 [label = "55: Redecorated room\nsafe code"]
+    room_56 [label = "56: Narrow ledge. Window"]
+    room_57 [label = "57: Death"]
+
+    room_1 -> room_6 [label = "N / DOOR"]
+    room_1 -> room_2 [label = S]
+    room_1 -> room_3 [label = E]
+    room_1 -> room_4 [label = W]
+
+    room_2 -> room_1 [label = N]
+    room_2 -> room_2 [label = S]
+    room_2 -> room_3 [label = E]
+    room_2 -> room_4 [label = W]
+
+    room_3 -> room_3 [label = N]
+    room_3 -> room_2 [label = S]
+    room_3 -> room_3 [label = E]
+    room_3 -> room_1 [label = W]
+
+    room_4 -> room_4 [label = N]
+    room_4 -> room_4 [label = S]
+    room_4 -> room_1 [label = E]
+    room_4 -> room_4 [label = W]
+
+    room_6 -> room_1 [label = "S / OUT"]
+    room_6 -> room_19 [label = E]
+    room_6 -> room_11 [label = W]
+    room_6 -> room_25 [label = "U / STAI"]
+
+    room_7 -> room_11 [label = "N / OUT"]
+
+    room_8 -> room_11 [label = "E / OUT"]
+
+    room_9 -> room_12 [label = "E / OUT"]
+
+    room_11 -> room_12 [label = N]
+    room_11 -> room_7 [label = S]
+    room_11 -> room_6 [label = E]
+    room_11 -> room_8 [label = "W / IEXPLODE"]
+
+    room_12 -> room_13 [label = N]
+    room_12 -> room_11 [label = S]
+    room_12 -> room_9 [label = "W / IEXPLODE"]
+
+    room_13 -> room_26 [label = N]
+    room_13 -> room_12 [label = S]
+    room_13 -> room_14 [label = E]
+
+    room_14 -> room_15 [label = E]
+    room_14 -> room_13 [label = W]
+
+    room_15 -> room_16 [label = "E / IEXPLODE"]
+    room_15 -> room_14 [label = W]
+    room_15 -> room_17 [label = S]
+
+    room_16 -> room_15 [label = W]
+    room_16 -> room_15 [label = OUT]
+
+    room_17 -> room_15 [label = N]
+    room_17 -> room_19 [label = S]
+    room_17 -> room_18 [label = "E / IEXPLODE"]
+
+    room_18 -> room_15 [label = "W / OUT"]
+
+    room_19 -> room_17 [label = N]
+    room_19 -> room_6 [label = W]
+    room_19 -> room_20 [label = "E / IEXPLODE"]
+
+    room_20 -> room_21 [label = S]
+    room_20 -> room_19 [label = "W / OUT"]
+
+    room_21 -> room_20 [label = N]
+    room_21 -> room_22 [label = S]
+
+    room_22 -> room_21 [label = N]
+    room_22 -> room_23 [label = S]
+
+    room_23 -> room_22 [label = N]
+
+    room_24 -> room_23 [label = "UP / OUT"]
+
+    room_25 -> room_28 [label = UP]
+    room_25 -> room_6 [label = D]
+
+    room_26 -> room_13 [label = S]
+    room_26 -> room_27 [label = "E / SHED / IEXPLODE"]
+
+    room_27 -> room_26 [label = "W / OUT"]
+
+    room_28 -> room_36 [label = N]
+    room_28 -> room_30 [label = E]
+    room_28 -> room_34 [label = W]
+    room_28 -> room_25 [label = "D / STAI / IEXPLODE"]
+
+    room_29 -> room_30 [label = N]
+    room_29 -> room_35 [label = W]
+
+    room_30 -> room_28 [label = N]
+    room_30 -> room_29 [label = S]
+    room_30 -> room_31 [label = E]
+
+    room_31 -> room_33 [label = N]
+    room_31 -> room_32 [label = E]
+    room_31 -> room_30 [label = W]
+
+    room_32 -> room_31 [label = W]
+    room_32 -> room_30 [label = OUT]
+    
+    room_33 -> room_31 [label = S]
+    room_33 -> room_31 [label = OUT]
+
+    room_34 -> room_28 [label = E]
+    room_34 -> room_35 [label = S]
+
+    room_35 -> room_34 [label = N]
+    room_35 -> room_29 [label = E]
+    room_35 -> room_37 [label = "U / STAI"]
+
+    room_36 -> room_28 [label = "S / OUT"]
+
+    room_37 -> room_38 [label = N]
+    room_37 -> room_35 [label = "D / STAI"]
+
+    room_38 -> room_37 [label = S]
+    room_38 -> room_39 [label = MIRR]
+
+    room_39 -> room_38 [label = W]
+    room_39 -> room_57 [label = N]
+    room_39 -> room_40 [label = S]
+    room_39 -> room_42 [label = E]
+
+    room_40 -> room_39 [label = N]
+    room_40 -> room_41 [label = S]
+    room_40 -> room_57 [label = E]
+
+    room_41 -> room_40 [label = N]
+    room_41 -> room_56 [label = E]
+    room_41 -> room_57 [label = D]
+
+    room_42 -> room_57 [label = N]
+    room_42 -> room_43 [label = S]
+    room_42 -> room_39 [label = W]
+
+    room_43 -> room_42 [label = N]
+    room_43 -> room_39 [label = W]
+
+    room_44 -> room_56 [label = "S / WIND"]
+    
+    room_46 -> room_45 [label = W]
+    room_46 -> room_47 [label = "E / GATE"]
+
+    room_47 -> room_46 [label = "W / GATE"]
+    room_47 -> room_51 [label = N]
+
+    room_48 -> room_49 [label = "N / OUT"]
+
+    room_49 -> room_52 [label = N]
+    room_49 -> room_48 [label = S]
+    room_49 -> room_52 [label = OUT]
+
+    room_50 -> room_53 [label = E]
+
+    room_51 -> room_52 [label = N]
+    room_51 -> room_47 [label = S]
+    room_51 -> room_50 [label = E]
+
+    room_52 -> room_49 [label = W]
+    room_52 -> room_51 [label = E]
+
+    room_53 -> room_50 [label = W]
+    room_53 -> room_54 [label = "E / CHUT"]
+
+    room_56 -> room_44 [label = "N / WIND / IEXPLODE"]
+    room_56 -> room_41 [label = W]
+    room_56 -> room_57 [label = D]
+    room_56 -> room_54 [label = CHUT]
+}
+
+@enduml
